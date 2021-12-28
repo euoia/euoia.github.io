@@ -4,7 +4,7 @@
         <title></title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Tue, 28 Dec 2021 15:47:36 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Dec 2021 16:05:01 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Joplin Pages Publisher</generator>
         <item>
@@ -50,6 +50,50 @@
 <p>Indeed, if you reload the Articles tab, it shows you that the note has changed and you have to manually Sync the updated content.</p>
 <p><img src="/_resources/274dd45f91ef46ab9c02e20be007b8e7.png" /></p>
 <p>I wonder if that’s something that can be done automatically?</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[2020-03-24 Poolish Bread Recipe]]></title>
+            <guid>fff5faacf09d49ed8de3af90f00713ef</guid>
+            <pubDate>Tue, 24 Mar 2020 14:49:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="background">Background</h2>
+<p>This is my standard bread recipe, which as of December 2021 is pretty much the only bread recipe I use. It’s fairly tolerant to minor variations in the weights and timings, and is the basis for my cheese bread recipe.</p>
+<p>The recipe starts by making a <em>Poolish</em>, which is a kind of batter, and leaving it for at least 12 hours before mixing it with a denser mixture for the final loaf.</p>
+<p>This recipe makes two loaves of roughly 875 grams wet mixture each.</p>
+<h2 id="making-the-poolish">Making the Poolish</h2>
+<p>A poolish should be made 12 hours in advance. Typically I do this the in the evening, then make the bread the following morning.</p>
+<p>Combine loosely in a large bowl:</p>
+<ul>
+<li>500 grams Strong White Bread Flour</li>
+<li>500 grams 30 °C Water</li>
+<li>¼ teaspoon Allisons dried instant easy bake yeast</li>
+</ul>
+<p>Cover with clingfilm or a damp teatowel and leave at room temperature for 12 to 20 hours.</p>
+<h2 id="making-the-loaf">Making the loaf</h2>
+<p>After resting the poolish for at least 12 hours it should be sticky and bubbly.</p>
+<p>You will need:</p>
+<ul>
+<li>500 grams Strong White Bread Flour</li>
+<li>21 grams kosher salt</li>
+<li>¾ tsp Allisons dried instant easy bake yeast</li>
+<li>250 grams 40 °C water</li>
+<li>All of the poolish</li>
+</ul>
+<ol>
+<li>In a large bowl combine the dry ingredients: flour, salt, yeast.</li>
+<li>Add the water to the poolish to loosen it from the sides of the bowl and scrape it into the other bowl.</li>
+<li>Keeping a bowl of water nearby to wet your hands, mix the ingredients with your hands by folding and pinching alternately for about 3 minutes, until the ingredients are integrated and there is not much dry flour. The dough will be very shaggy.</li>
+<li>Wait 30 minutes then stretch and fold.</li>
+<li>Wait another 30 minutes then stretch and fold.</li>
+<li>Wait another 30 minutes then stretch and fold.</li>
+<li>Leave the dough covered with a damp tea towel for a further hour.</li>
+<li>Put dough on floured surface and cut in half. Shape each half into boules and place one boule seam side down into a floured banneton or floured towel lined bowl. Wrap the other half of the dough in clingfilm and keep in a bowl in the fridge for a day or two. When you’re ready, you can remove it before transferring to a banneton and proceeding with the next step.</li>
+<li>Set oven to 220 °C Fan (240 °C conventional oven). Place a cast-iron dutch oven in the oven with its lid on.</li>
+<li>Wait an hour for the dutch oven to heat up and for the dough to rise.</li>
+<li>Tear a piece of greaseproof paper large enough to accommodate the dough, with extra at the sides for lifting.</li>
+<li>After an hour, flip the banneton upside down onto greaseproof paper. Carefully remove the banneton, trying not to tear the dough too much. Lift the dough by picking up the edges of the greeseproof and transfer into the dutch oven.</li>
+<li>Bake for 30 to 35 minutes with the lid on, then 15 to 20 minutes with the lid off.</li>
+</ol>
 ]]></content:encoded>
         </item>
     </channel>
