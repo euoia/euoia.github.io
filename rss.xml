@@ -4,7 +4,7 @@
         <title></title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Tue, 28 Dec 2021 16:05:01 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Dec 2021 21:54:04 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Joplin Pages Publisher</generator>
         <item>
@@ -14,7 +14,7 @@
             <content:encoded><![CDATA[<h2 id="background">Background</h2>
 <p>I discovered that Joplin includes a plugin for publishing to GitHub pages. I wanted to check it out to see how well it works.</p>
 <h2 id="installation">Installation</h2>
-<p>Open Preferences and search for GitHub. Install the Pages Publisher plugin:</p>
+<p>Open Preferences and search for <em>Pages Publisher</em>. Install the Pages Publisher plugin:</p>
 <p><img src="/_resources/febb2178432549208a08bed839a98d43.png" /></p>
 <p>After restarting Joplin, a new Pages Publisher option is availble in the preferences.</p>
 <p><img src="/_resources/0ac7e0aef08049adac15af00e956f49b.png" /></p>
