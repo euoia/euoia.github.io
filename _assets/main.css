@@ -180,9 +180,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -190,9 +190,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -201,9 +201,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -253,8 +253,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type='checkbox'],
-[type='radio'] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -264,8 +264,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -273,7 +273,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type='search'] {
+[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -283,7 +283,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type='search']::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -348,9 +348,9 @@ template {
 .navigation a {
   color: #ff001f;
   text-decoration: underline solid;
-  font-family: 'Lucida Console', 'Liberation Mono', Menlo, Monaco, Roboto, apple-system,
-    'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    'WenQuanYi Micro Hei', sans-serif;
+  font-family: "Lucida Console", "Liberation Mono", Menlo, Monaco, Roboto,
+    apple-system, "Helvetica Neue", Arial, "Helvetica Neue", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 #homepage,
@@ -383,15 +383,16 @@ template {
 .homepage-title {
   font-size: 30px;
   margin: 0 0 10px;
-  font-family: apple-system, 'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC',
-    'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-family: apple-system, "Helvetica Neue", Arial, "Helvetica Neue",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei",
+    sans-serif;
 }
 
 .homepage-subtitle {
   font-size: 12px;
-  font-family: 'Lucida Console', 'Liberation Mono', Menlo, Monaco, Roboto, apple-system,
-    'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    'WenQuanYi Micro Hei', sans-serif;
+  font-family: "Lucida Console", "Liberation Mono", Menlo, Monaco, Roboto,
+    apple-system, "Helvetica Neue", Arial, "Helvetica Neue", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .homepage-navigation ul {
@@ -411,9 +412,9 @@ template {
 .homepage-navigation a {
   color: #dd4242;
   text-decoration: none;
-  font-family: 'Lucida Console', 'Liberation Mono', Menlo, Monaco, Roboto, apple-system,
-    'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    'WenQuanYi Micro Hei', sans-serif;
+  font-family: "Lucida Console", "Liberation Mono", Menlo, Monaco, Roboto,
+    apple-system, "Helvetica Neue", Arial, "Helvetica Neue", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 .homepage-navigation a:hover {
   text-decoration: underline;
@@ -425,9 +426,9 @@ template {
 }
 
 .about li {
-  font-family: 'Lucida Console', 'Liberation Mono', Menlo, Monaco, Roboto, apple-system,
-    'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    'WenQuanYi Micro Hei', sans-serif;
+  font-family: "Lucida Console", "Liberation Mono", Menlo, Monaco, Roboto,
+    apple-system, "Helvetica Neue", Arial, "Helvetica Neue", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   margin-top: 15px;
 }
 .about li a {
@@ -437,17 +438,19 @@ template {
 
 .article-title {
   font-weight: normal;
-  font-family: apple-system, 'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC',
-    'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-family: apple-system, "Helvetica Neue", Arial, "Helvetica Neue",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei",
+    sans-serif;
 }
 
 .article-info {
   color: #777777;
   margin-bottom: 50px;
-  font-family: 'Lucida Console', 'Liberation Mono', Menlo, Monaco, Roboto, apple-system,
-    'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    'WenQuanYi Micro Hei', sans-serif;
+  font-family: "Lucida Console", "Liberation Mono", Menlo, Monaco, Roboto,
+    apple-system, "Helvetica Neue", Arial, "Helvetica Neue", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
+
 .article-info span {
   margin: 0 30px 0px 0;
 }
@@ -460,7 +463,7 @@ template {
 @font-face {
   font-family: octicons-link;
   src: url(data:font/woff;charset=utf-8;base64,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)
-    format('woff');
+    format("woff");
 }
 
 .markdown-body {
@@ -468,8 +471,9 @@ template {
   -webkit-text-size-adjust: 100%;
   line-height: 1.5;
   color: #24292e;
-  font-family: apple-system, 'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC',
-    'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-family: apple-system, "Helvetica Neue", Arial, "Helvetica Neue",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei",
+    sans-serif;
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -532,7 +536,7 @@ template {
 }
 
 .markdown-body .pl-c2::before {
-  content: '^M';
+  content: "^M";
 }
 
 .markdown-body .pl-sr .pl-cce {
@@ -653,7 +657,7 @@ template {
   overflow: visible;
 }
 
-.markdown-body [type='checkbox'] {
+.markdown-body [type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -692,13 +696,13 @@ template {
 
 .markdown-body hr::before {
   display: table;
-  content: '';
+  content: "";
 }
 
 .markdown-body hr::after {
   display: table;
   clear: both;
-  content: '';
+  content: "";
 }
 
 .markdown-body table {
@@ -784,14 +788,16 @@ template {
 }
 
 .markdown-body code {
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
   font-size: 12px;
 }
 
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
   font-size: 12px;
 }
 
@@ -829,13 +835,13 @@ template {
 
 .markdown-body::before {
   display: table;
-  content: '';
+  content: "";
 }
 
 .markdown-body::after {
   display: table;
   clear: both;
-  content: '';
+  content: "";
 }
 
 .markdown-body > *:first-child {
@@ -1052,11 +1058,11 @@ template {
   background-color: #fff;
 }
 
-.markdown-body img[align='right'] {
+.markdown-body img[align="right"] {
   padding-left: 20px;
 }
 
-.markdown-body img[align='left'] {
+.markdown-body img[align="left"] {
   padding-right: 20px;
 }
 
@@ -1121,7 +1127,8 @@ template {
 .markdown-body kbd {
   display: inline-block;
   padding: 3px 5px;
-  font: 11px 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font: 11px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
   line-height: 10px;
   color: #444d56;
   vertical-align: middle;
@@ -1180,14 +1187,15 @@ template {
   display: block;
   font-size: 20px;
   margin-bottom: 30px;
-  font-family: 'Lucida Console', 'Liberation Mono', Menlo, Monaco, Roboto, apple-system,
-    'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    'WenQuanYi Micro Hei', sans-serif;
+  font-family: "Lucida Console", "Liberation Mono", Menlo, Monaco, Roboto,
+    apple-system, "Helvetica Neue", Arial, "Helvetica Neue", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .annual-block-title {
-  font-family: apple-system, 'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC',
-    'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  font-family: apple-system, "Helvetica Neue", Arial, "Helvetica Neue",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei",
+    sans-serif;
   color: #000;
   text-decoration: none;
 }
@@ -1196,9 +1204,9 @@ template {
 }
 
 .annual-block-date {
-  font-family: 'Lucida Console', 'Liberation Mono', Menlo, Monaco, Roboto, apple-system,
-    'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    'WenQuanYi Micro Hei', sans-serif;
+  font-family: "Lucida Console", "Liberation Mono", Menlo, Monaco, Roboto,
+    apple-system, "Helvetica Neue", Arial, "Helvetica Neue", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   margin-right: 30px;
   color: #999999;
 }
@@ -1222,9 +1230,9 @@ template {
   font-size: 20px;
 }
 .error a {
-  font-family: 'Lucida Console', 'Liberation Mono', Menlo, Monaco, Roboto, apple-system,
-    'Helvetica Neue', Arial, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    'WenQuanYi Micro Hei', sans-serif;
+  font-family: "Lucida Console", "Liberation Mono", Menlo, Monaco, Roboto,
+    apple-system, "Helvetica Neue", Arial, "Helvetica Neue", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   text-decoration: underline dotted;
   color: #777777;
 }
