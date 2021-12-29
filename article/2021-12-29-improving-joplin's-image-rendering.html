@@ -1,17 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-    <channel>
-        <title></title>
-        <link>undefined</link>
-        <description>undefined</description>
-        <lastBuildDate>Wed, 29 Dec 2021 18:11:09 GMT</lastBuildDate>
-        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-        <generator>Joplin Pages Publisher</generator>
-        <item>
-            <title><![CDATA[2021-12-29 Improving Joplin's Image Rendering]]></title>
-            <guid>731199ec4f974459a09dbb8f77e91c5b</guid>
-            <pubDate>Wed, 29 Dec 2021 12:42:42 GMT</pubDate>
-            <content:encoded><![CDATA[<h2 id="background">Background</h2>
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet" href="/_assets/main.css" />
+
+    <title>2021-12-29 Improving Joplin&#39;s Image Rendering - Pickard&#39;s Pickle</title>
+  <link rel="stylesheet" href="/_markdown_plugin_assets/highlight.js/atom-one-light.css" /></head>
+  <body>
+    <div class="main">
+      <nav class="navigation">
+        <a href="/">Pickard&#39;s Pickle</a>
+      </nav>
+      <article>
+        <header>
+          <h1 class="article-title">2021-12-29 Improving Joplin&#39;s Image Rendering</h1>
+          <div class="article-info">
+            <div>
+              Published <time datetime="1640781762749"
+              >2021-12-29 07:42</time
+              >, updated <time datetime="1640801412754"
+                >2021-12-29 13:10</time
+                >.</span
+            </div>
+            
+          </div>
+        </header>
+        <div class="article-content markdown-body"><h2 id="background">Background</h2>
 <p>When pasting screenshots from Mac OS, they are shown at 2x resolution in Joplin (and in rendered GitHub pages) since that’s how Mac OS captures them on a retina screen.</p>
 <p>If you take a screenshot on Mac OS and open Preview, then create a new document with the contents of the clipboard, the resulting .png file will be twice the width and twice the height of the original screenshot.</p>
 <p>Critically though, when pasting into Preview, Mac OS recognises that the Image DPI is 144 pixels/inch (instead of the regular 72 pixels/inch).</p>
@@ -105,106 +121,8 @@
 <li>The issue author is writing a note taking app.</li>
 <li>The issue is around preserving original clipboard data.</li>
 </ul>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Using Joplin with GitHub Pages]]></title>
-            <guid>727e7afd306f4ab5be8ba3f4baf1fbed</guid>
-            <pubDate>Tue, 28 Dec 2021 14:25:55 GMT</pubDate>
-            <content:encoded><![CDATA[<h2 id="background">Background</h2>
-<p>I discovered that Joplin includes a plugin for publishing to GitHub pages. I wanted to check it out to see how well it works.</p>
-<h2 id="installation">Installation</h2>
-<p>Open Preferences and search for <em>Pages Publisher</em>. Install the Pages Publisher plugin:</p>
-<p><img src="/_resources/febb2178432549208a08bed839a98d43.png" /></p>
-<p>After restarting Joplin, a new Pages Publisher option is availble in the preferences.</p>
-<p><img src="/_resources/0ac7e0aef08049adac15af00e956f49b.png" /></p>
-<p>It requires a GitHub access token with the public_repo scope.</p>
-<p>In <a title="https://github.com/settings/tokens/new" href="https://github.com/settings/tokens/new">https://github.com/settings/tokens/new</a> I created a new token with just that permission.</p>
-<p><img src="/_resources/be4922a4fe0e4b02a7aa9a43fae4ca8e.png" /></p>
-<p>I added the GitHub token in the Joplin preferences.</p>
-<p>In the Tools menu, there is an option to Open Pages Publisher:</p>
-<p><img src="/_resources/dec53b185b4e472787a8fc2513ff0ab8.png" /></p>
-<p>When you open it, a new panel appears:</p>
-<p><img src="/_resources/830bd719d9ab472688afd40560abb924.png" /></p>
-<h2 id="usage">Usage</h2>
-<p>The user guide is here: <a title="https://github.com/ylc395/joplin-plugin-pages-publisher/wiki/User-Guide" href="https://github.com/ylc395/joplin-plugin-pages-publisher/wiki/User-Guide">https://github.com/ylc395/joplin-plugin-pages-publisher/wiki/User-Guide</a></p>
-<p>I already have a blog on GitHub pages, under “blog”:
-<a title="https://euoia.github.io/blog/making-bread/" href="https://euoia.github.io/blog/making-bread/">https://euoia.github.io/blog/making-bread/</a></p>
-<p>This is covered the FAQ, no special action is required.</p>
-<p>When I go to add Articles, it shows “No Data”:</p>
-<p><img src="/_resources/5df3c55d4dd34a88b0d5246955643f2f.png" /></p>
-<p>Perhaps it’s because I didn’t configure my GitHub settings yet?</p>
-<p>Indeed, after configuring my GitHub settings and Quitting and reopening the plugin, my notes are showing up. I was able to add this note:</p>
-<p><img src="/_resources/86d50163b3ce4d7e8f9d28fcc5e09de8.png" /></p>
-<p>Then click Generate to publish the site:</p>
-<p><img src="/_resources/0c3e2beabb9745c08d18685b33e41b92.png" /></p>
-<p>My site is now available at <a title="https://euoia.github.io" href="https://euoia.github.io">https://euoia.github.io</a>:</p>
-<p><img src="/_resources/4dd7990b71114114ba866b6410b1f7c4.png" /></p>
-<p>But where is my article?</p>
-<p>It shows in the Archives:
-<a title="https://euoia.github.io/archives" href="https://euoia.github.io/archives">https://euoia.github.io/archives</a></p>
-<p>Is it supposed to show on the main page?</p>
-<p>This is something I may wish to address later.</p>
-<h2 id="updating-articles">Updating Articles</h2>
-<p>I noticed that when I changed my note, the published version didn’t change.</p>
-<p>Indeed, if you reload the Articles tab, it shows you that the note has changed and you have to manually Sync the updated content.</p>
-<p><img src="/_resources/274dd45f91ef46ab9c02e20be007b8e7.png" /></p>
-<p>I wonder if that’s something that can be done automatically?</p>
-<h2 id="creating-a-custom-theme">Creating a custom theme</h2>
-<p>I wanted to be able to tweak a few things in my theme. I also wanted to see what the process looks like, because it’s quite likely I will want to change a few things later on and it would be nice to know what’s involved.</p>
-<p>The documentation is really clear and works well:
-<a title="https://github.com/ylc395/joplin-plugin-pages-publisher/wiki/How-to-create-a-custom-theme" href="https://github.com/ylc395/joplin-plugin-pages-publisher/wiki/How-to-create-a-custom-theme">https://github.com/ylc395/joplin-plugin-pages-publisher/wiki/How-to-create-a-custom-theme</a></p>
-<p>So I created a custom theme, which I’ve pushed to GitHub here:
-<a title="https://github.com/euoia/joplin-pages-pickle-theme" href="https://github.com/euoia/joplin-pages-pickle-theme">https://github.com/euoia/joplin-pages-pickle-theme</a></p>
-<p>At the moment, it just changes the appearance of the article timestamps, which I thought were a bit too in-your-face. Here’s my updated version:</p>
-<p><img src="/_resources/c41d8c9e49774020a93ac6956112b0b6.png" /></p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Poolish Bread Recipe]]></title>
-            <guid>fff5faacf09d49ed8de3af90f00713ef</guid>
-            <pubDate>Tue, 24 Mar 2020 14:49:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h2 id="background">Background</h2>
-<p>This is my standard bread recipe, which as of December 2021 is pretty much the only bread recipe I use. It’s fairly tolerant to variations in the weights and timings, and is the basis for my cheese bread recipe.</p>
-<p>The recipe starts by making a <em>poolish</em>, which is a kind of batter, and leaving it for at least 12 hours before mixing it with a denser mixture for the final loaf.</p>
-<p>This recipe makes two loaves of roughly 875 grams wet mixture each.</p>
-<h2 id="making-the-poolish">Making the Poolish</h2>
-<p>A poolish should be made at least 12 hours before starting the loaf proper. Typically I do this the in the evening, then make the bread the following morning.</p>
-<p>Combine loosely in a large bowl:</p>
-<ul>
-<li>500 grams Strong White Bread Flour</li>
-<li>500 grams 30 °C Water</li>
-<li>¼ teaspoon Allison’s dried instant easy bake yeast</li>
-</ul>
-<p>Cover with clingfilm or a damp tea towel and leave at room temperature for 12 to 20 hours.</p>
-<h2 id="making-the-loaf">Making the loaf</h2>
-<p>After resting the poolish for at least 12 hours it should be sticky and bubbly.</p>
-<p>You will need:</p>
-<ul>
-<li>500 grams Strong White Bread Flour</li>
-<li>21 grams kosher salt</li>
-<li>¾ tsp Allison’s dried instant easy bake yeast</li>
-<li>250 grams 40 °C water</li>
-<li>All of the poolish</li>
-</ul>
-<ol>
-<li>In a large bowl combine the dry ingredients: flour, salt, yeast.</li>
-<li>Add the water to the poolish to loosen it from the sides of the bowl and scrape it into the other bowl.</li>
-<li>Keeping a bowl of water nearby to wet your hands, mix the ingredients with your hands by folding and pinching alternately for about 3 minutes, until the ingredients are integrated and there is not much dry flour. The dough will be very shaggy.</li>
-<li>Wait 30 minutes then stretch and fold.</li>
-<li>Wait another 30 minutes then stretch and fold.</li>
-<li>Wait another 30 minutes then stretch and fold.</li>
-<li>Leave the dough covered with a damp tea towel for a further hour.</li>
-<li>Put dough on floured surface and cut in half. Shape each half into boules and place one boule seam side down into a floured banneton or floured towel lined bowl. Wrap the other half of the dough in clingfilm and keep in a bowl in the fridge for a day or two. When you’re ready, you can remove it before transferring to a banneton and proceeding with the next step.</li>
-<li>Set oven to 220 °C Fan (240 °C conventional oven). Place a cast-iron dutch oven in the oven with its lid on.</li>
-<li>Wait an hour for the dutch oven to heat up and for the dough to rise.</li>
-<li>Tear a piece of greaseproof paper large enough to accommodate the dough, with extra at the sides for lifting.</li>
-<li>After an hour, flip the banneton upside down onto greaseproof paper. Carefully remove the banneton, trying not to tear the dough too much. Lift the dough by picking up the edges of the greeseproof and transfer into the dutch oven.</li>
-<li>Bake for 30 to 35 minutes with the lid on, then 15 to 20 minutes with the lid off.</li>
-</ol>
-<h2 id="cheese-bread">Cheese Bread</h2>
-<p>To make a cheesy variant of this recipe, chop 250 grams of emmental (the older and smellier the better) into 1.5 centimetre cubed pieces and fold into the centre of the dough as you make a boule. It will seem like a lot of cheese, but I have found it works really well.</p>
-]]></content:encoded>
-        </item>
-    </channel>
-</rss>
+</div>
+      </article>
+    </div>
+  </body>
+</html>
