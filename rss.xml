@@ -4,7 +4,7 @@
         <title></title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Wed, 29 Dec 2021 12:06:07 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 29 Dec 2021 12:06:48 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Joplin Pages Publisher</generator>
         <item>
@@ -50,6 +50,7 @@
 <p>Indeed, if you reload the Articles tab, it shows you that the note has changed and you have to manually Sync the updated content.</p>
 <p><img src="/_resources/274dd45f91ef46ab9c02e20be007b8e7.png" /></p>
 <p>I wonder if that’s something that can be done automatically?</p>
+<h2 id="creating-a-custom-theme">Creating a custom theme</h2>
 ]]></content:encoded>
         </item>
         <item>
