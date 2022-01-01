@@ -4,11 +4,11 @@
         <title></title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Sat, 01 Jan 2022 20:10:55 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 01 Jan 2022 20:14:45 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Joplin Pages Publisher</generator>
         <item>
-            <title><![CDATA[2022-01-01 Status of Bootstrap-Vue]]></title>
+            <title><![CDATA[Status of Bootstrap-Vue]]></title>
             <guid>5854e58fb7334afd88b3da51045369a9</guid>
             <pubDate>Sat, 01 Jan 2022 14:38:57 GMT</pubDate>
             <content:encoded><![CDATA[<h2 id="background">Background</h2>
@@ -55,11 +55,11 @@ But i kept getting told “We will start again soon”, but soon never happened.
 <p>The latest update is contained in this pinned issue:
 <a title="https://github.com/bootstrap-vue/bootstrap-vue/issues/6872" href="https://github.com/bootstrap-vue/bootstrap-vue/issues/6872">https://github.com/bootstrap-vue/bootstrap-vue/issues/6872</a></p>
 <blockquote>
-<p>TL; DR
-New maintainers are here
-Pull requests will be reviewed within several days
-There will be a new release of bootstrap-vue coming with fixes included
-Primary goal of the team is to rewrite bootstrap-vue to support Vue 3 and Bootstrap v5. We will do this in a separate repository. We will announce the detailed roadmap for a rewrite as soon as we have it</p>
+<p>TL; DR</p>
+<p>New maintainers are here</p>
+<p>Pull requests will be reviewed within several days</p>
+<p>There will be a new release of bootstrap-vue coming with fixes included</p>
+<p>Primary goal of the team is to rewrite bootstrap-vue to support Vue 3 and Bootstrap v5. We will do this in a separate repository. We will announce the detailed roadmap for a rewrite as soon as we have it</p>
 </blockquote>
 ]]></content:encoded>
         </item>
