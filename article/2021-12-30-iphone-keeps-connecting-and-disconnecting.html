@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet" href="/_assets/main.css" />
+
+    <title>iPhone keeps connecting and disconnecting - Pickard&#39;s Pickle</title>
+  <link rel="stylesheet" href="/_markdown_plugin_assets/highlight.js/atom-one-light.css" /></head>
+  <body>
+    <div class="main">
+      <nav class="navigation">
+        <a href="/">Pickard&#39;s Pickle</a>
+      </nav>
+      <article>
+        <header>
+          <h1 class="article-title">iPhone keeps connecting and disconnecting</h1>
+          <div class="article-info">
+            <div>
+              Published <time datetime="1640871287201"
+              >2021-12-30 08:34</time
+              >, updated <time datetime="1641047569084"
+                >2022-01-01 09:32</time
+                >.</span
+            </div>
+            
+          </div>
+        </header>
+        <div class="article-content markdown-body"><h2 id="background">Background</h2>
+<p>I occasionally do iOS application development, and in some cases want to test the application on my phone.</p>
+<p>I have an iPhone XS and a 2015 Macbook Pro.</p>
+<p>I am afflicted by the issue described here:
+<a title="https://www.ifixit.com/Answers/View/473839/iOS+devices+connecting+and+disconnecting+rapidly" href="https://www.ifixit.com/Answers/View/473839/iOS+devices+connecting+and+disconnecting+rapidly">https://www.ifixit.com/Answers/View/473839/iOS+devices+connecting+and+disconnecting+rapidly</a>.</p>
+<p>That is, when I connect my iPhone to my laptop via USB the computer shows the iPhone connecting and disconnecting rapidly. This makes it impossible to use as a test device.</p>
+<p>I have tried, without success:</p>
+<ul>
+<li>Using different cables, including genuine Apple ones.</li>
+<li>Using both USB ports on the laptop.</li>
+</ul>
+<p>What works reliably is using a powered USB hub. But carrying one of those around is inconvenient, and I don’t have one with me now.</p>
+<p>The solutions listed in the thread include:</p>
+<ul>
+<li>Trying a different cable.</li>
+<li>Force quitting the usbd process.</li>
+<li>Performing an <em>SMC reset</em>.</li>
+<li>Charging phone to 100%.</li>
+</ul>
+<p>I recall that force quitting usbd has worked for me in the past, but does not seem to work now. Force quitting usbd via activity monitor causes my phone to disappear from the Device Setup screen, and replugging causes the repeated disconnected behaviour to resume.</p>
+<h2 id="a-solution">A solution</h2>
+<p>I ran the following in the terminal:</p>
+<div><pre class="hljs"><code>sudo killall -<span class="hljs-literal">STOP</span> -c usbd</code></pre></div>
+<p>And noticed that although the Device Setup screen didn’t list my phone, the Next button was still enabled. Clicking Next allowed me to build and run my app on my phone.</p>
+<p>Running this command from the command line should do the same thing as force quit in activity monitor. More testing is required to see whether using force quit in activity monitor allows this behaviour.</p>
+</div>
+      </article>
+    </div>
+  </body>
+</html>
