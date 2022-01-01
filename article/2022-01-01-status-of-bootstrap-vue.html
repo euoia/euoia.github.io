@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet" href="/_assets/main.css" />
+
+    <title>2022-01-01 Status of Bootstrap-Vue - Pickard&#39;s Pickle</title>
+  </head>
+  <body>
+    <div class="main">
+      <nav class="navigation">
+        <a href="/">Pickard&#39;s Pickle</a>
+      </nav>
+      <article>
+        <header>
+          <h1 class="article-title">2022-01-01 Status of Bootstrap-Vue</h1>
+          <div class="article-info">
+            <div>
+              Published <time datetime="1641047937235"
+              >2022-01-01 09:38</time
+              >, updated <time datetime="1641067770698"
+                >2022-01-01 15:09</time
+                >.</span
+            </div>
+            
+          </div>
+        </header>
+        <div class="article-content markdown-body"><h2 id="background">Background</h2>
+<p><a title="Bootstrap-Vue" href="Bootstrap-Vue">https://github.com/bootstrap-vue/bootstrap-vue</a> is a component library for <a title="https://vuejs.org/" href="https://vuejs.org/">Vue.js</a> that wraps and extends Bootstrap components for use in Vue.js-based web applications. It has components for <a title="https://bootstrap-vue.org/docs/components/button" href="https://bootstrap-vue.org/docs/components/button">buttons</a>, <a title="https://bootstrap-vue.org/docs/components/table" href="https://bootstrap-vue.org/docs/components/table">tables</a>, <a title="https://bootstrap-vue.org/docs/components/modal" href="https://bootstrap-vue.org/docs/components/modal">modals</a>, <a title="https://bootstrap-vue.org/docs/components/tabs" href="https://bootstrap-vue.org/docs/components/tabs">tabs</a> and loads more. The documentation is very good, and despite using it extensively I have encountered very few problems. It’s a library that I often use in my projects, and use throughout my ePOS software Little Till.</p>
+<p>For a while, the maintenance status of Bootstrap-Vue has been in question. Regular contributions stopped in early 2021, with the the original author, <a title="https://github.com/pi0" href="https://github.com/pi0">Pooya Parsa</a>’s <a title="https://github.com/bootstrap-vue/bootstrap-vue/commit/f43097ea27c4362dafe96fa8b52dac4eda39e271" href="https://github.com/bootstrap-vue/bootstrap-vue/commit/f43097ea27c4362dafe96fa8b52dac4eda39e271">last contribution</a> in May 2019. Latterly <a title="https://github.com/jacobmllr95" href="https://github.com/jacobmllr95">Jacob Müller</a> made a lot of contributions, but has not been a regular presence since early 2021.</p>
+<p><img src="/_resources/d736dad0119e4f7689c41046223fdb06.png" /></p>
+<p><a title="https://www.npmjs.com/package/bootstrap-vue" href="https://www.npmjs.com/package/bootstrap-vue">Boostrap-Vue has roughly 200,000 weekly downloads via npm</a>.</p>
+<h2 id="support-for-newer-technologies">Support for newer technologies</h2>
+<p>The biggest question are around support for newer Vue and Bootstrap libraries. Bootstrap-Vue requires Vue 2 and wraps Bootstrap v4, but newer versions of Vue and Bootstrap are now available.</p>
+<p>Vue 3 has been available for some time, but the Vue team are a bit unclear about its status. As of January 1 2022, <a title="https://v3.vuejs.org/guide/introduction.html" href="https://v3.vuejs.org/guide/introduction.html">the documentation says this</a>:</p>
+<blockquote>
+<p>All of our official libraries and tools now support Vue 3, but some of them are still in beta or release candidate status.</p>
+</blockquote>
+<p>Bootstrap v5 was marked as <em>stable</em> on May 5 2021.</p>
+<h2 id="getting-by-in-the-dark">Getting by in the dark</h2>
+<p>Throughout 2021 there was a lack of clarity regarding the future of Bootstrap-Vue. There are issues about this on GitHub (<a title="https://github.com/bootstrap-vue/bootstrap-vue/issues/5507" href="https://github.com/bootstrap-vue/bootstrap-vue/issues/5507">5507</a> <a title="https://github.com/bootstrap-vue/bootstrap-vue/issues/5196" href="https://github.com/bootstrap-vue/bootstrap-vue/issues/5196">5196</a>) without any satisfactory resolution. The most active maintainer, <a title="https://github.com/Hiws" href="https://github.com/Hiws">Hiws</a>, has been praised for providing helpful answers on GitHub and actively helping out on on the <a title="https://discord.gg/j2Mtcny" href="https://discord.gg/j2Mtcny">Bootstrap-Vue Discord</a>. However, <a title="https://github.com/bootstrap-vue/bootstrap-vue/issues/5196#issuecomment-990151947" href="https://github.com/bootstrap-vue/bootstrap-vue/issues/5196#issuecomment-990151947">Hiws has stated clearly</a> that he’s not interested in managing pull-requests or other code-based maintenance.</p>
+<p>In response to discussions around Vue 3 and Bootsrap v5 support, Jacob Müller <a title="https://github.com/bootstrap-vue/bootstrap-vue/issues/6556#issuecomment-824388825" href="https://github.com/bootstrap-vue/bootstrap-vue/issues/6556#issuecomment-824388825">said in April 2021</a>:</p>
+<blockquote>
+<p>BootstrapVue is still maintained and will have Vue 3 and Bootstrap 5 support in the future.
+There will not be ETAs in the near future but it will definitely happen.</p>
+</blockquote>
+<p>Sadly, that development work was never done and Hiws has had to repeatedly explain to people that the repository is unmaintained. In November, on Discord, Hiws said:</p>
+<blockquote>
+<p>i tried pushing the maintainers back in april/may to put out a “The project is no longer actively maintained”, so people wouldn’t be waiting around for new updates and Vue 3 support when it was likely never coming any time soon.
+But i kept getting told “We will start again soon”, but soon never happened.</p>
+</blockquote>
+<p>Without input from either Pooya Parsa or Jacob Müller very little has happened and the conversations did not lead far. Even with a potential budget of <a title="https://opencollective.com/bootstrap-vue#category-BUDGET" href="https://opencollective.com/bootstrap-vue#category-BUDGET">roughly $20,000 raised using OpenCollective</a>, there was nobody to take the lead on the project.</p>
+<h2 id="bring-on-the-forks">Bring on the forks</h2>
+<p>As often happens when a beloved open source project is clearly abandoned, forks spring up.</p>
+<p>Here’s a list of the forks that I am aware of.</p>
+<p><a title="https://github.com/xanf" href="https://github.com/xanf">Illya Klymov</a>’s fork targeting <a title="https://v3.vuejs.org/guide/migration/migration-build.html" href="https://v3.vuejs.org/guide/migration/migration-build.html">Vue 3’s Migration Build</a>, with Bootstrap v4, created in November 2021 - discussed <a title="https://github.com/bootstrap-vue/bootstrap-vue/issues/5196#issuecomment-974596073" href="https://github.com/bootstrap-vue/bootstrap-vue/issues/5196#issuecomment-974596073">here</a>:
+<a title="https://github.com/xanf/bootstrap-vue/tree/vue3-compat-build" href="https://github.com/xanf/bootstrap-vue/tree/vue3-compat-build">https://github.com/xanf/bootstrap-vue/tree/vue3-compat-build</a></p>
+<p><a title="https://github.com/cdmoro" href="https://github.com/cdmoro">Carlos Bonadeo</a>’s fork targeting Vue 3, Boostrap v5 and Typescript:
+<a title="https://github.com/cdmoro/bootstrap-vue-3" href="https://github.com/cdmoro/bootstrap-vue-3">https://github.com/cdmoro/bootstrap-vue-3</a></p>
+<p>Carlos’s fork appears to be a complete rewrite that attempts to match the Bootstrap-Vue API. <a title="https://cdmoro.github.io/bootstrap-vue-3/getting-started/#why-bootstrapvue3" href="https://cdmoro.github.io/bootstrap-vue-3/getting-started/#why-bootstrapvue3">It’s documentation states</a> <em>NOT PRODUCTION READY</em> and critically it appears to be missing a <a title="https://cdmoro.github.io/bootstrap-vue-3/components/" href="https://cdmoro.github.io/bootstrap-vue-3/components/">table component</a>.</p>
+<p>Also of note is a <a title="https://github.com/bootstrap-vue/bootstrap-vue/issues/6872#issuecomment-999822688" href="https://github.com/bootstrap-vue/bootstrap-vue/issues/6872#issuecomment-999822688">recently released</a> library targeting Bootstrap v5 and Vue 3, but which does not appear to attempt any API compatibility with the original Bootstrap-Vue project:  <a title="https://coreui.io/bootstrap-vue/" href="https://coreui.io/bootstrap-vue/">https://coreui.io/bootstrap-vue/</a>.</p>
+<p>In my view, given that there is no attempt to maintain API compatibility with Bootstrap-Vue, it is confusing that CoreUI have decided use this name, even if it’s the most obvious choice for a project combining Bootstrap and Vue.</p>
+<h2 id="a-new-era-dawns">A new era dawns</h2>
+<p>Things took a more positive turn on 14 December 2021 when Pooya resurfaced with <a title="https://github.com/bootstrap-vue/bootstrap-vue/issues/5196#issuecomment-993881245" href="https://github.com/bootstrap-vue/bootstrap-vue/issues/5196#issuecomment-993881245">this comment</a>:</p>
+<blockquote>
+<p>Thanks for starting to work on vue3 support @xanf @cdmoro 💚 If you would like to dedicate more time, I can invite you to org, and also we have funds available in open-collective.</p>
+</blockquote>
+<p>Subsequently Carlos Bonadeo (cdmoro) and Illya Klymov (xanf) were made maintainers of the Bootstrap-Vue repository. Since then Illya has got on with some basic tidy up and merging of simple pull requests.</p>
+<p>The latest update is contained in this pinned issue:
+<a title="https://github.com/bootstrap-vue/bootstrap-vue/issues/6872" href="https://github.com/bootstrap-vue/bootstrap-vue/issues/6872">https://github.com/bootstrap-vue/bootstrap-vue/issues/6872</a></p>
+<blockquote>
+<p>TL; DR
+New maintainers are here
+Pull requests will be reviewed within several days
+There will be a new release of bootstrap-vue coming with fixes included
+Primary goal of the team is to rewrite bootstrap-vue to support Vue 3 and Bootstrap v5. We will do this in a separate repository. We will announce the detailed roadmap for a rewrite as soon as we have it</p>
+</blockquote>
+</div>
+      </article>
+    </div>
+  </body>
+</html>
