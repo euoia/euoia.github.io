@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet" href="/_assets/main.css" />
+
+    <title>Handling rejected promises in Express.js requests - Pickard&#39;s Pickle</title>
+  <link rel="stylesheet" href="/_markdown_plugin_assets/highlight.js/atom-one-light.css" /></head>
+  <body>
+    <div class="main">
+      <nav class="navigation">
+        <a href="/">Pickard&#39;s Pickle</a>
+      </nav>
+      <article>
+        <header>
+          <h1 class="article-title">Handling rejected promises in Express.js requests</h1>
+          <div class="article-info">
+            <div>
+              Published <time datetime="1641073036521"
+              >2022-01-01 16:37</time
+              >, updated <time datetime="1641137071929"
+                >2022-01-02 10:24</time
+                >.</span
+            </div>
+            
+          </div>
+        </header>
+        <div class="article-content markdown-body"><h2 id="background">Background</h2>
+<p>In 2015, JavaScript introduced <code>async</code> keyword which allows functions to <code>await</code> on promises, causing execution of the current context to pause until the promise <code>resolves</code> or <code>rejects</code>. The older way of handling promises them using <code>then</code> and <code>catch</code> introduced an additional level of nesting.</p>
+<p>It’s reasonable to expect that Express handles traditional errors and rejected promises (and thrown errors within an async function) the same way. Unfortunately, Express v4 has a <em>gotcha</em> where rejected promises in an async function require additional treatment.</p>
+<h2 id="synchronous-errors">Synchronous errors</h2>
+<p>In the following typical Express request handler, the <code>doSomething</code> function throws an error.</p>
+<div><pre class="hljs"><code>app.<span class="hljs-title function_">get</span>(<span class="hljs-string">"/sync-example"</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+  <span class="hljs-title function_">doSomething</span>();
+  res.<span class="hljs-title function_">status</span>(<span class="hljs-number">200</span>).<span class="hljs-title function_">send</span>(<span class="hljs-string">"OK"</span>);
+});</code></pre></div>
+<p>What happens when a client makes a request to this endpoint?</p>
+<div><pre class="hljs"><code>curl -v localhost:3000/sync-example
+*   Trying ::1:3000...
+* Connected to localhost (::1) port 3000 (#0)
+<span class="hljs-meta">&gt;</span> <span class="language-javascript"><span class="hljs-variable constant_">GET</span> /sync-example <span class="hljs-variable constant_">HTTP</span>/<span class="hljs-number">1.1</span></span>
+<span class="hljs-meta">...</span>
+<span class="hljs-meta">&gt;</span>
+* Mark bundle as not supporting multiuse
+&lt; HTTP/1.1 500 Internal Server Error
+<span class="hljs-meta">...</span>
+&lt;
+<span class="hljs-meta">...</span> <span class="language-javascript"><span class="hljs-title class_">Stack</span> trace rendered <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">HTML</span> ...</span>
+* Connection #0 to host localhost left intact</code></pre></div>
+<p>The following happens:</p>
+<ol>
+<li>The server responds with a 500 error.</li>
+<li>The client receives a stack trace rendered as HTML.</li>
+<li>The server continues serving request.</li>
+</ol>
+<p>Note that setting <code>NODE_ENV</code> to <code>production</code> causes Express to return less verbose error messages.</p>
+<h2 id="asynchronous-errors">Asynchronous Errors</h2>
+<p>What happens when we try the same thing with an asynchronous request handler?</p>
+<p>Express request handlers are just functions, so of course it is possible to use an <code>async</code> function as a request handler:</p>
+<div><pre class="hljs"><code>app.<span class="hljs-title function_">get</span>(<span class="hljs-string">"/async-example"</span>, <span class="hljs-keyword">async</span> (req, res) =&gt; {
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">asyncDoSomething</span>();
+  res.<span class="hljs-title function_">status</span>(<span class="hljs-number">200</span>).<span class="hljs-title function_">send</span>(<span class="hljs-string">"OK"</span>);
+});
+</code></pre></div>
+<p>When I tested, using Node v17.3.0 and Express 4.17.1, Node crashed with the following error:</p>
+<div><pre class="hljs"><code><span class="hljs-regexp">/Users/</span>jp<span class="hljs-regexp">/example/i</span>ndex-<span class="hljs-number">2</span>.js:<span class="hljs-number">22</span>
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"Something went wrong."</span>);
+        ^
+
+Error: Something went wrong.
+    at asyncDoSomething (<span class="hljs-regexp">/Users/</span>jp<span class="hljs-regexp">/example/i</span>ndex-<span class="hljs-number">2</span>.js:<span class="hljs-number">22</span>:<span class="hljs-number">9</span>)
+    at <span class="hljs-regexp">/Users/</span>jp<span class="hljs-regexp">/example/i</span>ndex-<span class="hljs-number">2</span>.js:<span class="hljs-number">26</span>:<span class="hljs-number">9</span>
+    at Layer.handle [as handle_request] (<span class="hljs-regexp">/Users/</span>jp<span class="hljs-regexp">/example/</span>node_modules<span class="hljs-regexp">/express/</span>lib<span class="hljs-regexp">/router/</span>layer.js:<span class="hljs-number">95</span>:<span class="hljs-number">5</span>)
+    at <span class="hljs-keyword">next</span> (<span class="hljs-regexp">/Users/</span>jp<span class="hljs-regexp">/example/</span>node_modules<span class="hljs-regexp">/express/</span>lib<span class="hljs-regexp">/router/</span>route.js:<span class="hljs-number">137</span>:<span class="hljs-number">13</span>)
+    at Route.dispatch (<span class="hljs-regexp">/Users/</span>jp<span class="hljs-regexp">/example/</span>node_modules<span class="hljs-regexp">/express/</span>lib<span class="hljs-regexp">/router/</span>route.js:<span class="hljs-number">112</span>:<span class="hljs-number">3</span>)
+    at Layer.handle [as handle_request] (<span class="hljs-regexp">/Users/</span>jp<span class="hljs-regexp">/example/</span>node_modules<span class="hljs-regexp">/express/</span>lib<span class="hljs-regexp">/router/</span>layer.js:<span class="hljs-number">95</span>:<span class="hljs-number">5</span>)
+    at <span class="hljs-regexp">/Users/</span>jp<span class="hljs-regexp">/example/</span>node_modules<span class="hljs-regexp">/express/</span>lib<span class="hljs-regexp">/router/i</span>ndex.js:<span class="hljs-number">281</span>:<span class="hljs-number">22</span>
+    at Function.process_params (<span class="hljs-regexp">/Users/</span>jp<span class="hljs-regexp">/example/</span>node_modules<span class="hljs-regexp">/express/</span>lib<span class="hljs-regexp">/router/i</span>ndex.js:<span class="hljs-number">335</span>:<span class="hljs-number">12</span>)
+    at <span class="hljs-keyword">next</span> (<span class="hljs-regexp">/Users/</span>jp<span class="hljs-regexp">/example/</span>node_modules<span class="hljs-regexp">/express/</span>lib<span class="hljs-regexp">/router/i</span>ndex.js:<span class="hljs-number">275</span>:<span class="hljs-number">10</span>)
+    at expressInit (<span class="hljs-regexp">/Users/</span>jp<span class="hljs-regexp">/example/</span>node_modules<span class="hljs-regexp">/express/</span>lib<span class="hljs-regexp">/middleware/i</span>nit.js:<span class="hljs-number">40</span>:<span class="hljs-number">5</span>)
+
+Node.js v17.<span class="hljs-number">3.0</span>
+
+
+Node.js v17.<span class="hljs-number">3.0</span></code></pre></div>
+<p>And the client received an empty response.</p>
+<h2 id="async-handler-to-the-rescue">Async Handler to the rescue</h2>
+<p>The <a title="https://expressjs.com/en/guide/error-handling.html" href="https://expressjs.com/en/guide/error-handling.html">Express error handling documentation</a> takes pains to describe about how rejected promises must be handled by calling <code>next(err)</code>. Of course, this quite verbose and also requires the programmer to catch every single rejected promise error (in contrast to how synchronous errors are handled).</p>
+<p>The documentation states that Express version 5 will fix this. <a title="https://github.com/expressjs/express/pull/2237" href="https://github.com/expressjs/express/pull/2237">Express v5 has been in development since July 2014, and does not have an expected release date</a>.</p>
+<p>Fortunately, an npm package exists that fixes all this: <a title="https://www.npmjs.com/package/express-async-handler" href="https://www.npmjs.com/package/express-async-handler">express-async-handler</a>.</p>
+<p>However, I would much prefer this behaviour to built into Express, and I have <a title="https://github.com/expressjs/express/issues/4535#issuecomment-843830618" href="https://github.com/expressjs/express/issues/4535#issuecomment-843830618">expressed this sentiment on GitHub</a>. Such small, fundamental, libraries should really be part of core framework in order to minimise risk of <a title="https://www.theregister.com/2016/03/23/npm_left_pad_chaos/" href="https://www.theregister.com/2016/03/23/npm_left_pad_chaos/">left-pad type incidents</a>.</p>
+<p>For context, express-async-handler is <a title="https://github.com/Abazhenov/express-async-handler/blob/master/index.js" href="https://github.com/Abazhenov/express-async-handler/blob/master/index.js">8 lines of code</a> and Express has <a title="https://www.npmjs.com/package/express" href="https://www.npmjs.com/package/express">12.5 million weekly downloads</a>.</p>
+</div>
+      </article>
+    </div>
+  </body>
+</html>
