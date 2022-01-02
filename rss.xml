@@ -4,7 +4,7 @@
         <title></title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Sun, 02 Jan 2022 15:26:32 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 02 Jan 2022 15:29:49 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Joplin Pages Publisher</generator>
         <item>
@@ -71,7 +71,7 @@ Node.js v17.<span class="hljs-number">3.0</span>
 Node.js v17.<span class="hljs-number">3.0</span></code></pre></div>
 <p>And the client received an empty response.</p>
 <h2 id="async-handler-to-the-rescue">Async Handler to the rescue</h2>
-<p>The <a title="https://expressjs.com/en/guide/error-handling.html" href="https://expressjs.com/en/guide/error-handling.html">Express error handling documentation</a> takes pains to describe about how rejected promises must be handled by calling <code>next(err)</code>. Of course, this quite verbose and also requires the programmer to catch every single rejected promise error (in contrast to how synchronous errors are handled).</p>
+<p>The <a title="https://expressjs.com/en/guide/error-handling.html" href="https://expressjs.com/en/guide/error-handling.html">Express error handling documentation</a> takes pains to describe how rejected promises must be handled by calling <code>next(err)</code>. Of course, this is quite verbose and also requires the programmer to catch every single rejected promise error (in contrast to how synchronous errors are handled).</p>
 <p>The documentation states that Express version 5 will fix this. <a title="https://github.com/expressjs/express/pull/2237" href="https://github.com/expressjs/express/pull/2237">Express v5 has been in development since July 2014, and does not have an expected release date</a>.</p>
 <p>Fortunately, an npm package exists that fixes all this: <a title="https://www.npmjs.com/package/express-async-handler" href="https://www.npmjs.com/package/express-async-handler">express-async-handler</a>.</p>
 <p>However, I would much prefer this behaviour to built into Express, and I have <a title="https://github.com/expressjs/express/issues/4535#issuecomment-843830618" href="https://github.com/expressjs/express/issues/4535#issuecomment-843830618">expressed this sentiment on GitHub</a>. Such small, fundamental, libraries should really be part of core framework in order to minimise risk of <a title="https://www.theregister.com/2016/03/23/npm_left_pad_chaos/" href="https://www.theregister.com/2016/03/23/npm_left_pad_chaos/">left-pad type incidents</a>.</p>
