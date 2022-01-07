@@ -361,7 +361,6 @@ template {
 }
 
 .homepage-main {
-  max-width: 800px;
   margin: 0 auto;
   position: relative;
   top: 30%;
@@ -406,7 +405,6 @@ template {
 }
 
 .homepage-navigation a {
-  min-width: 110px;
   flex: 1;
   text-align: center;
   color: #dd4242;
