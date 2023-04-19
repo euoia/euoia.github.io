@@ -4,7 +4,7 @@
         <title></title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Mon, 24 Jan 2022 18:48:58 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 19 Apr 2023 08:36:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Joplin Pages Publisher</generator>
         <item>
@@ -434,6 +434,92 @@ But i kept getting told “We will start again soon”, but soon never happened.
 </ol>
 <h2 id="cheese-bread">Cheese Bread</h2>
 <p>To make a cheesy variant of this recipe, chop 250 grams of emmental (the older and smellier the better) into 1.5 centimetre cubed pieces and fold into the centre of the dough as you make a boule. It will seem like a lot of cheese, but I have found it works really well.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Neovim Dot App]]></title>
+            <guid>c4c30ec154c449a4946d822616852a06</guid>
+            <pubDate>Wed, 13 Nov 2019 06:42:13 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="creating-a-standalone-executable-for-neovim-based-on-iterm2">Creating a standalone executable for Neovim based on iTerm2</h2>
+<p><img src="./cover-image.png" alt="Neovim running as a standalone app" /></p>
+<p>I use Neovim on OS X as my code editor.</p>
+<p>I am quite happy to use it in the terminal, but I find it helpful to have a
+separate application that I can run in full screen and can switch to
+independently of iTerm2.</p>
+<p>I tried some of the standalone Neovim applications, but was generally unhappy
+with them for one reason or another. So I decided to make a standalone version
+that runs inside iTerm2.</p>
+<p>Running Neovim this way is great because it leverages the power and stability
+of iTerm2. iTerm2 has great support for customization of appearance and
+keyboard rebinding.</p>
+<p>Here’s how to build a standalone version of Neovim that’s based on iTerm2.</p>
+<p>I am not a developer of Mac applications, so the following is based on a bit of
+trial and error and fiddling around with XCode. This is the method I’ve used to
+build a standalone version of Neovim several times across several versions of
+Neovim and XCode.</p>
+<p>These steps have been tested with XCode 11.2.</p>
+<ol>
+<li>
+<p>Clone iTerm2 master from GitHub <a title="https://github.com/gnachman/iTerm2" href="https://github.com/gnachman/iTerm2">https://github.com/gnachman/iTerm2</a></p>
+</li>
+<li>
+<p>Open XCode and choose “Open another project…”. Select the directory where you cloned iTerm2.</p>
+</li>
+</ol>
+<p><img src="./open-another-project.png" alt="Open another project" /></p>
+<ol start="3">
+<li>Change Bundle ID to (something like) co.uk.cloudship.neovim</li>
+</ol>
+<p><img src="./change-bundle-id.png" alt="Change bundle ID" /></p>
+<ol start="4">
+<li>Under Signing &amp; Capabilities change to “Sign to run locally”</li>
+</ol>
+<p><img src="./sign-to-run-locally.png" alt="Sign to run locally" /></p>
+<ol start="5">
+<li>In the right-hand pane change Name to Neovim</li>
+</ol>
+<p><img src="./change-name.png" alt="Change name" /></p>
+<p>A window will appear helping you rename all instances of iTerm2 to Neovim.</p>
+<ol start="6">
+<li>Update the icons.</li>
+</ol>
+<p>Find Supporting Files &gt; Images &gt; Media.xcassets (you can use the filter at the
+bottom of the file list window)</p>
+<p>Grab the Neovim icon from here:
+<a title="https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-mark.png" href="https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-mark.png">https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-mark.png</a></p>
+<p>I used Iconfly to generate AppIcon.appiconset (select generate without scaling).</p>
+<p>Drag the AppIcon.appiconset folder to Xterm.</p>
+<p>Remove the old icon set and rename the new one to the old name.</p>
+<p><img src="./update-icons.png" alt="Update icons" /></p>
+<ol start="7">
+<li>I tried building at this point but it failed due to a reference somewhere to iTerm2.pch.</li>
+</ol>
+<p>In XCode, select the project and go to Build Settings.</p>
+<p>Under targets select NeovimSharedArc.</p>
+<p>In the filter, enter GCC_PREFIX.</p>
+<p>Under the setting Prefix Header, update the value to <code>sources/Neovim.pch</code>.</p>
+<p><img src="/_resources/a7e3408ec40e43fd8391dcab772363dd.png" /></p>
+<ol start="8">
+<li>
+<p>Replace all references to <code>iTerm2SharedARC-Swift.h</code> with <code>NeovimSharedARC-Swift.h</code></p>
+</li>
+<li>
+<p>Build the application by hitting ⌘-R.</p>
+</li>
+<li>
+<p>Copy Neovim to applications.</p>
+</li>
+</ol>
+<p>Under Products right click on Neovim.app and select “Show in Finder”.</p>
+<p>Move Neovim.app to applications.</p>
+<ol start="10">
+<li>All done!</li>
+</ol>
+<p>You should be able to run Neovim.app now.</p>
+<p>What I did after this was create a separate profile for Neovim in iTerm2 that
+runs the following at startup: <code>nvim &amp;&amp; exit</code>. This option is under Profiles &gt;
+General as “send text at start”) in the iTerm2 (and now Neovim) preferences.</p>
+<p><img src="./iterm2-config.png" alt="iTerm2 config" /></p>
 ]]></content:encoded>
         </item>
     </channel>
